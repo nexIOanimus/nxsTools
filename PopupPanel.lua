@@ -4,12 +4,11 @@ USAGE
 
 	popup = PopupPanel:new()
 	popup.title = "Share"
-	popup:addElement("Facebook", sharer.shareFacebook)
-	popup:addElement("Twitter", sharer.shareTwitter)
-	popup:addElement("Email", sharer.shareMail)
-	popup:addElement("Message", sharer.shareSMS)
+
+	popup:addElement("Facebook", facebookShareFunction())
+	popup:addElement("Twitter", twitterShareFunction())
 	popup:addElement("Cancel", popup:getHideFunction())
-	
+
 	popup:show()
 ]]
 
@@ -20,6 +19,7 @@ local dispW, dispH = display.actualContentWidth, display.actualContentHeight
 
 --PopupPanel class
 --popup panel with buttons and a title
+--you can modify any of these attributes for customization
 local PopupPanel =
 {
 	title = "Panel",
@@ -122,7 +122,7 @@ function PopupPanel:setupContainer()
 
     end
 
-    container:addEventListener( "touch", 
+    container:addEventListener( "touch",
     	function() return true end )
 end
 
