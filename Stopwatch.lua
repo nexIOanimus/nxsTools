@@ -2,7 +2,14 @@ local function sysTimeSec()
 	return system.getTimer() / 1000
 end
 
-local Stopwatch = 
+--A stopwatch class for Corona SDK
+--USAGE:
+-- stopwatch = Stopwatch.new()
+-- stopwatch:start()
+-- print(stopwatch:getTimeSeconds())
+-- stopwatch:stop()
+-- stopwatch:reset()
+local Stopwatch =
 {
 	startTime = 0,
 	storedTime = 0,
